@@ -2,5 +2,26 @@
 
 var words = [kite, wallet, peanuts, caramel, joke, ant];
 
+
+function fiveOrMore(arr) {                
+  return arr.filter(function(item){           //used filter to return an array of items that meet the condition
+    return item.length >= 5;                  //returns all items with lengths(characters) greater than or equal to 5
+  });
+}
+
+
 /* write a function that would take a string and count the number of occurence of each character. Return the list in an object. eg "aaaaBBBccc" would return {a:4,B:3,c:3} */
 
+
+function occur(str) {
+var temp = str.split(""), storage = {};             //turns the string into an array of characters and creates an empty obj 
+
+  for(var i in temp) { 
+    if(storage.hasOwnProperty(temp[i])) {              //checks if the prop exists
+      storage[temp[i]] = storage[temp[i]] + 1;           //adds one to count it if it does
+    } else {
+      storage[temp[i]] = 1;                             //if it doesnt exists creates it
+    }
+  }
+  return storage;
+}
