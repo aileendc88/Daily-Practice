@@ -1,0 +1,6 @@
+/* write a function fiveOrMore that takes an array of strings and would return an array containing words that has at least five letters in it */
+
+var words = [kite, wallet, peanuts, caramel, joke, ant];
+
+/* write a function that would take a string and count the number of occurence of each character. Return the list in an object. eg "aaaaBBBccc" would return {a:4,B:3,c:3} */
+
