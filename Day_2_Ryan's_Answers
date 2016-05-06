@@ -1,0 +1,57 @@
+/*Create a function uniqueList that would remove duplicate elements of the array.
+For example: var array = [1,3,0,7,0,1,2,9,3,1,8,2,7,] should return a newArray = [1,3,0,7,2,9,8,] */
+
+var array1 = [1,3,0,7,0,1,2,9,3,1,8,2,7,];
+
+function uniqueList(arr) {
+var storage = {}, newArray =[];
+  
+  for(var i = 0; i < arr.length;i++) {
+    if(storage.hasOwnProperty(arr[i])) {
+      continue;
+    } else {
+      storage[arr[i]] = arr[i];
+    }
+  }
+  
+  for(var el in storage) {
+    newArray.push(storage[el]);
+  }
+  return newArray;
+}
+
+//create an array myFamily containing 3 objects. Each object has 3 properties - name, age, birthYear
+
+var myFamily  = [
+  {name: "Robin", age: 49, birthYear: 1969},
+  {name: "Aileen", age: 35, birthYear: 1980},
+  {name: "Ryan", age: 29, birthYear: 1987}
+];
+//console.log(myFamily[0]);
+// create a function birthday that would return only the objects with birthYear after 1970. 
+
+function birthday(arr) {
+var storage = [], temp;
+  
+  arr.forEach(function(item){
+    if(item.birthYear > 1970) {
+      storage.push(item);
+    }
+  });
+  return storage;
+}
+
+
+// create a function that would return the sum of the ages of all the objects returned in the function birthday
+
+function sumAge (arr) {
+var sum = 0;
+  
+  arr.forEach(function(item){
+    sum+= item.age;
+  });
+  return sum;
+} 
+
+sumAge(birthday(myFamily));
+
