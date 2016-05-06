@@ -1,0 +1,6 @@
+/*Create a function uniqueList that would remove duplicate elements of the array.
+For example: var array = [1,3,0,7,0,1,2,9,3,1,8,2,7,] should return a newArray = [1,3,0,7,2,9,8,] */
+
+//create an array myFamily containing 5 objects. Each object has 3 properties - name, age, birthYear
+// create a function birthday that would return only the objects with birthYear after 1970. 
+// create a function that would return the sum of the ages of all the objects returned in the function birthday
