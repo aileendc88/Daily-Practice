@@ -1,0 +1,48 @@
+/*Create a function uniqueList that would remove duplicate elements of the array.
+For example: var array = [1,3,0,7,0,1,2,9,3,1,8,2,7,] should return a newArray = [1,3,0,7,2,9,8,] */
+
+var array = [1,3,0,7,0,1,2,9,3,1,8,2,7,];
+
+function uniqueList(arr){
+  var newArray = arr.filter(function(item,index){
+    return arr.indexOf(item)===index;
+  });
+  return newArray;
+}
+console.log(uniqueList(array));
+
+//create an array myFamily containing 3 objects. Each object has 3 properties - name, age, birthYear
+
+var myFamily = [
+  {
+    name: "bro",
+    age: 30,
+    birthyear: 1985
+  },
+  {
+    name: "dad",
+    age: 70,
+    birthyear: 1955
+  },
+  {
+    name: "sister",
+    age: 25,
+    birthyear: 1990
+  }
+];
+
+// create a function birthday that would return only the objects with birthYear after 1970. 
+// create a function that would return the sum of the ages of all the objects returned in the function birthday
+
+function birthday(arr){
+  var fam = arr.filter(function(obj){
+    return obj.birthyear>1970;
+  });
+  
+  var sumAge = fam.reduce(function(a,b){
+    return a + b.age;    
+  },0);
+   return sumAge;
+}
+
+console.log(birthday(myFamily));
