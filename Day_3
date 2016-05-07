@@ -1,0 +1,12 @@
+/*solve using higher order functions.
+
+/*create an array of at least five number values, minimum number should be 1. 
+write a function that would return the number of quarters in each number value*/
+
+/*create an array of strings. write a function that would output an object with the string as property and value equal to the
+string with each character duplicated. example: var string = ["ant", "bug"] should return  var obj = {ant:"aanntt", "bug":"bbuugg"}*/
+
+// flatten the array below.
+var myList = [3,[4,5,6],[7,8[9,10]]
+
+// using the flattened array, write a function that would return the sum of all even numbers and product of all odd numbers
