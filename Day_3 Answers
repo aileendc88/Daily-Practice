@@ -15,7 +15,37 @@ console.log(countQuarters(myNumbers));
 /*create an array of strings. write a function that would output an object with the string as property and value equal to the
 string with each character duplicated. example: var string = ["ant", "bug"] should return  var obj = {ant:"aanntt", "bug":"bbuugg"}*/
 
+var myList = ["ant","bug"];
+
+function duplicateLetters(arr){
+  
+  var prop = [];                  // will hold the strings with each character duplicated
+  var dupObj ={};               
+  
+  arr.forEach(function(item){         // this function will duplicate each character in the string
+    var newItem = "";
+    for(var i=0; i<item.length; i++){
+      newItem += (item[i]+item[i]);    
+    }
+    prop.push(newItem);
+  });
+  
+  for(var i=0; i<prop.length; i++){       // will set-up the property value pair for the empty dupObj
+    dupObj[arr[i]]=prop[i];
+  }
+  return dupObj;
+}
+console.log(duplicateLetters(myList));
+
 // flatten the array below.
 var myList = [3,[4,5,6],[7,8[9,10]]
+
+function flatten(arr){
+  var newArr = arr.reduce(function(a,b){
+    return a.concat(b);
+  },[]);
+  return newArr;
+}
+console.log(flatten(myList));
 
 // using the flattened array, write a function that would return the sum of all even numbers and product of all odd numbers
