@@ -1,0 +1,46 @@
+/*You were asked to take arrays of items for wedding gifts and turn them into a registry. Take the items below and put them into 
+an obj called weddingRegistry that will list each item as the property and who it is from and how much it costs as the value. The 
+function should be able to handle newly added items.  
+
+**All cash should be added up and returned as one key/value pair, however, the value should include each person who gave cash.**
+
+The items are listed in order i.e: Toaster is from Uncle Bob and is 20 dollars
+*/
+
+var items = ["Toaster", "Gift Cards", "Cash", "Cash", "Cash", "pot"];
+
+var who = ["Uncle Bob", "Aunt Kathy", "Jack", "Cam", "Matt", "mom"];
+
+var cost = [20, 100, 50, 50, 50, 50];
+
+function weddingRegistry(itemsArr,whoArr,costArr){
+  
+  var registryObj = {};
+  var cashGifts = [];
+  var cashTotal = 0;
+  var cashGivers = [];
+  
+  for(var i=0; i<itemsArr.length; i++){
+    if(itemsArr[i] !== "Cash"){
+      registryObj[itemsArr[i]] = [whoArr[i],costArr[i]];
+    }
+    else if(itemsArr[i] === "Cash"){
+      cashGifts.push(whoArr[i],costArr[i]);
+    }
+  }
+  
+  for(var j=0; j<cashGifts.length; j++){
+    if(typeof(cashGifts[j])==="string"){
+      cashGivers.push(cashGifts[j]);
+    }
+    else if(typeof(cashGifts[j])==="number"){
+      cashTotal+=cashGifts[j];
+    }
+  }
+  
+  registryObj.Cash = cashGivers.concat(cashTotal);
+  return registryObj;
+
+}
+
+console.log(weddingRegistry(items,who,cost));
