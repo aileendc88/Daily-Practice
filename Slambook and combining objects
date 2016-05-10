@@ -2,7 +2,61 @@
 name = your name/age= your age/address = object with properties street, city, state/married = boolean value/ myHobbies = array of your hobbies/ luckyNumbers = array of integers/ 
 bestfriends = array of names and their ages  */
 
+var slamBook = {
+  name: "Ryan",
+  age: 29,
+  address: {street: "4101 California", city: "Bakersfield", state: "CA"},
+  married: true,
+  myHobbies: ["cooking", "gaming", "weekend trips", "watching baby take a big dick", "watching a big dick pound baby"],
+  luckyNumbers: [7,13],
+  bestFriends: ["Nick", "Casey", "Kyle", 29]
+};
+
 /*write a function that would count the number of string values in the object you created */
+
+function countStr (obj) {
+var count = 0;
+  
+  for(var i in obj) {
+    if(typeof obj[i] === 'string') {
+      count++;
+    } else if(typeof obj[i] === 'object') {
+      for(var el in obj[i]) {
+        if(typeof obj[i][el] === 'string') {
+          count++;
+        }
+      }
+    }
+  }
+  return count;
+}
+
+console.log(countStr(slamBook));
 
 /* given two objects: var obj1 = {a:10, b:13, c:20, d:16} and var obj2 = {a:16, c:15, d:25, e:7}
 write a function that would return a single object that would combine/add up all the property value pairs */
+var obj1 = {a:10, b:13, c:20, d:16};
+var obj2 = {a:16, c:15, d:25, e:7};
+
+
+function countVal(obj1, obj2) {
+ var count = 0, newObj = {total: 0};
+  
+  function addUp(obj) {
+    for(var i in obj) {
+      if(newObj.hasOwnProperty(i)) {
+        count+= obj[i];
+        newObj[i] = newObj[i] + obj[i];
+     } else {
+         count+= obj[i];
+         newObj[i] = obj[i];
+     }
+    }
+  }
+  addUp(obj1); 
+  addUp(obj2);
+  newObj.total = count;
+  return newObj;
+}
+
+console.log(countVal(obj1,obj2));
