@@ -1,0 +1,57 @@
+/*create an object named slamBook. It has the following properties and value pairs:
+name = your name/age= your age/married = boolean value/ myHobbies = array of your hobbies/ luckyNumbers = array of integers/ 
+bestfriends = array of names and their ages  */
+
+/*write a function that would count the number of string values in the object you created */
+
+var slambook = {
+  name: "Aileen",
+  age: 30,
+  married: true,
+  myHobbies: ["traveling","crafts","watching"],
+  luckyNumbers:[9,29],
+  bestfriends: ["cherie",31,"angela",32]
+};
+function strCount(obj){
+console.log(obj);
+  count = 0;
+  count2 = 0;
+  
+  for(var prop in obj){
+    if(typeof(obj[prop])==="string"){
+      count++;
+    }
+    else if(Array.isArray(obj[prop])){
+      for(var i =0; i<obj[prop].length; i++){
+        if (typeof(obj[prop][i]) === "string"){
+          count2++;
+        }
+      }
+    }
+  }
+  return count + count2;
+}
+
+/* given two objects: var obj1 = {a:10, b:13, c:20, d:16} and var obj2 = {a:16, c:15, d:25, e:7}
+write a function that would return a single object that would combine/add up all the property value pairs */
+
+var obj1 = {a:10, b:13, c:20, d:16};
+
+var obj2 = {a:16, c:15, d:25, e:7};
+
+function combineObject(firstObj,secondObj){
+  var newObj = firstObj;
+  
+  for(var prop in secondObj){
+    if(newObj.hasOwnProperty(prop)){
+      newObj[prop] = newObj[prop]+secondObj[prop];
+    }
+    else{
+      newObj[prop] = secondObj[prop];
+    }
+  }
+  
+  return newObj;
+}
+
+console.log(combineObject(obj1,obj2));
