@@ -7,7 +7,7 @@ var slamBook = {
   age: 29,
   address: {street: "4101 California", city: "Bakersfield", state: "CA"},
   married: true,
-  myHobbies: ["cooking", "gaming", "weekend trips", "watching baby take a big dick", "watching a big dick pound baby"],
+  myHobbies: ["cooking", "gaming", "weekend trips"],
   luckyNumbers: [7,13],
   bestFriends: ["Nick", "Casey", "Kyle", 29]
 };
