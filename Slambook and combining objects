@@ -1,5 +1,5 @@
 /*create an object named slamBook. It has the following properties and value pairs:
-name = your name/age= your age/married = boolean value/ myHobbies = array of your hobbies/ luckyNumbers = array of integers/ 
+name = your name/age= your age/address = object with properties street, city, state/married = boolean value/ myHobbies = array of your hobbies/ luckyNumbers = array of integers/ 
 bestfriends = array of names and their ages  */
 
 /*write a function that would count the number of string values in the object you created */
