@@ -2,13 +2,22 @@
 
 var x = 1234;
 
+//Solution 1
+
 function reverseNumber(num){
   var newNum = num.toString();
   var reversedNum = "";
   for(var i=newNum.length-1; i>=0; i--){
     reversedNum += newNum[i];
   }
-  return Number(reversedNum);
+  return Number(reversedNum);                     // this function would return the reversed string as a number
 }
 
 console.log(reverseNumber(x));
+
+//Solution 2
+function reverseNumber(num){
+  var newNum = num.toString();
+  
+  return newNum.split("").reverse().join("");       // this would return the number as a string
+}
