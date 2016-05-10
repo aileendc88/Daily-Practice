@@ -1,0 +1,22 @@
+/* Write a JavaScript function that checks whether a passed string is palindrome or not? Go to the editor
+A palindrome is word, phrase, or sequence that reads the same backward as forward, e.g., madam or nurses run. */
+
+var word = "nurses run";
+
+function palindromeTest(str){
+  
+  var reversedWord = str.replace(/\s/g,"").split("").reverse().join("");
+  
+  
+  if(reversedWord === str.replace(/\s/g,"")){
+    
+    return str + " is a palindrome";
+  }
+  
+  else{
+    return str + " is not a palindrome";
+  }
+   
+}
+
+console.log(palindromeTest(word));
