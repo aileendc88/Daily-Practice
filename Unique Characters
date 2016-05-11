@@ -1,0 +1,16 @@
+/* Write a JavaScript function to extract unique characters from a string. Go to the editor
+Example string : "thequickbrownfoxjumpsoverthelazydog"
+Expected Output : "thequickbrownfxjmpsvlazydg" */
+
+var sampleString = "thequickbrownfoxjumpsoverthelazydog";
+
+function uniqueChar(str){
+  var newStr = str.split("");
+  
+  return newStr.filter(function(item,index){
+    
+    return newStr.indexOf(item)===index;            
+  }).join("");
+}
+
+console.log(uniqueChar(sampleString));
