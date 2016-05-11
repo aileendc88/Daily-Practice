@@ -1,0 +1,23 @@
+ /* Write a JavaScript function to  get the number of occurrences of each letter in specified string. */
+
+var test = "mechanical engineer";
+
+function countChar(str){
+  
+  var newStr = str.replace(/\s/g,"").split("");
+  var frequencyObj = {};
+  
+  for(var i=0; i<newStr.length; i++){
+    if(frequencyObj.hasOwnProperty(newStr[i])){
+      
+      frequencyObj[newStr[i]] +=1;
+    }
+    else{
+      frequencyObj[newStr[i]] = 1;
+    }
+  }
+  
+  return frequencyObj;
+}
+
+console.log(countChar(test));
