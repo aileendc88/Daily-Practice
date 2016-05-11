@@ -1,0 +1,18 @@
+/* Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word of the string in upper case. */
+
+var phrase = "the quick brown fox";
+
+function capitalize(str){
+ 
+  var newStr = str.split(" ");
+  var firstLetterCap = [];
+  
+  for(var i=0; i<newStr.length; i++){
+    var first = newStr[i].charAt(0).toUpperCase();
+    var rest = newStr[i].slice(1);
+    firstLetterCap.push(first + rest);
+  }
+  return firstLetterCap.join(" ");
+}
+
+console.log(capitalize(phrase)); 
