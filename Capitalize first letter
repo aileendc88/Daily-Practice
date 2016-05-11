@@ -2,6 +2,8 @@
 
 var phrase = "the quick brown fox";
 
+//Solution 1
+
 function capitalize(str){
  
   var newStr = str.split(" ");
@@ -16,3 +18,16 @@ function capitalize(str){
 }
 
 console.log(capitalize(phrase)); 
+
+// Solution 2 - using map function
+
+
+function capitalize2(str){
+ 
+ return str.split(" ").map(function(item){
+   return item = item[0].toUpperCase()+item.slice(1);
+ })
+}
+
+console.log(capitalize2(phrase)); 
+
