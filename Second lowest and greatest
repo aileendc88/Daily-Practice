@@ -1,0 +1,20 @@
+/*Write a JavaScript function which will take an array of numbers stored and find the second lowest and second greatest numbers, respectively. Go to the editor
+Sample array : [1,2,3,4,5]
+Expected Output : 2,4 */
+
+var list = [1,2,3,4,5];
+
+function secondOnly(arr){
+  var newArr = arr.sort(function(a,b){
+    return b-a;
+  });
+  var newlist = [];
+  
+  var secLowest = newlist.push(newArr[newArr.length-2]);
+  var secGreatest = newlist.push(newArr[1]);
+  
+  return newlist;
+  
+}
+
+console.log(secondOnly(list));
