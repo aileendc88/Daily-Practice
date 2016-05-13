@@ -1,0 +1,65 @@
+/*Use a hybrid prototype constructor for a car object that has the properties make, model and year. Give the object the prototype "getValue" that will extact the cost from the "cost" object and log it with "The [make] is [cost]."
+
+After that create 3 instances of the object using the hybrid consturctor. Use the arrays below to complete this problem.*/
+
+//Here are the cars in order: Make, Model and Year
+
+var chevy = ["Chevy", "Explorer", "2000"];
+var nissan = ["Nissan", "Rogue", "2010"];
+var ford = ["Ford", "F150", "2008"];
+
+var cost = {
+  "Ford": 28000,
+  "Chevy": 4000,
+  "Nissan": 23000
+};
+
+/*function Car(make,model,year){
+  this.make = "make";
+  this.model = "model";
+  this.year = "year";
+  Car.prototype.getValue = function(make){
+    if(make==="Ford"){
+      console.log("The " + make + cost["Ford"]);
+    }
+    else if(make === "Chevy") 
+    {
+      console.log("The " + make + cost["Chevy"]); 
+    }
+    else if(make === "Nissan") 
+    {
+      console.log("The " + make + cost["Nissan"]); 
+    }
+  };
+}
+
+var Chevy = new Car("Chevy","Explorer","2000");
+var nissan1 = new Car("Nissan", "Rogue", "2010");
+var ford1 = new Car ("Ford", "F150", "2008");
+
+Chevy.getValue("Chevy");*/
+
+function Car(make,model,year){
+  this.make = make;
+  this.model = model;
+  this.year = year;
+  this.getValue = function(){
+    if(this.make==="Ford"){
+      console.log("The " + this.make + " is  " + cost["Ford"]);
+    }
+    else if(this.make === "Chevy") 
+    {
+      console.log("The " + this.make + " is "  + cost["Chevy"]); 
+    }
+    else if(this.make === "Nissan") 
+    {
+      console.log("The " + this.make + " is "  + cost["Nissan"]); 
+    }
+  };
+}
+
+var Chevy = new Car("Chevy","Explorer","2000");
+var Nissan = new Car("Nissan", "Rogue", "2010");
+var Ford = new Car ("Ford", "F150", "2008");
+
+Nissan.getValue();
