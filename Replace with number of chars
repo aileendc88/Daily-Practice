@@ -1,0 +1,30 @@
+/*create a function that takes in a str of words and replaces all the letters in the words except the first and last letter with the number of letters replaced.
+
+Example: "Hi! My name is Ryan."   =  "Hi! My n2e is R2n." */
+
+var test =  "Hi! My name is Ryan.";
+
+function myTest(str){
+  
+  var reg = /([^a-zA-Z0-9])/g;
+  
+  var newStr = str.split(reg);
+  
+  var storage = [];
+  
+  
+  for(var i=0; i<newStr.length; i++){
+    
+    if(newStr[i].length <= 2){
+      storage.push(newStr[i]);
+    }
+    else {
+      newStr[i]=newStr[i][0]+(newStr[i].length-2) + newStr[i][newStr[i].length-1]; 
+      storage.push(newStr[i]);
+    }
+  }
+  
+  return storage.join("");
+}
+
+console.log(myTest(test));
