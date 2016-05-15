@@ -1,0 +1,22 @@
+/*Write a JavaScript program which accept a number as input and insert dashes (-) between each two even numbers.*/
+
+var test = 225468900122;
+
+function insertDashes(x){
+  var str = x.toString();
+  var result = [str[0]];
+  console.log(str);
+  console.log(result);
+  
+  for(var i=0; i<str.length; i++){
+    if(str[i]%2===0 && str[i+1]%2===0){
+      result.push("-",str[i+1]);
+    }
+    else{
+      result.push(str[i+1]);
+    }
+  }
+  return result.join("");
+}
+
+console.log(insertDashes(test));
