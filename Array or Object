@@ -1,0 +1,34 @@
+/*Create a function that takes in an obj or an array (but not both at the same time) and returns one of the below strings depending on what type of argument is passed: 
+
+"[object] has [number of properties] and they are [property names] and have the values [values of properties] respectively"
+
+"[array] contains [number of items] and they are [items] in order of position" */
+
+var test = ["flower", "candies"];
+var test2 = {
+    flower: "rose",
+    candy: "kit-kat",
+    color: "blue"
+};
+
+function arrayOrObject(arg){
+  if(Array.isArray(arg)){
+    var items = [];
+    for(var i=0; i<arg.length; i++){
+      items.push(arg[i]);
+    }
+    return "Array contains " + arg.length + " items and they are " + items;
+  }
+  else if(typeof(arg)==="object"){
+    var propNames = [];
+    var values = [];
+    for(var prop in arg){
+      propNames.push(prop);
+      values.push(arg[prop]);
+    }
+    return "Object has " + propNames.length + " properties and they are " + propNames + " and they have the values " + values + " respectively.";
+  }
+}
+
+console.log(arrayOrObject(test2));
+console.log(arrayOrObject(test));
